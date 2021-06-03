@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40b0d0676c634927b3a21e4dc4b410ebe29bf74a1e1110dacba5ad081410c6b0
-size 290
+{
+    "name": "com.siccity.gltfutility",
+    "displayName": "GLTFUtility",
+    "version": "0.6.0",
+    "unity": "2018.2",
+    "keywords": ["glTF", "import"],
+	"description": "Lightweight glTF loader.",
+	"dependencies": {
+		"com.unity.nuget.newtonsoft-json": "2.0.0-preview"
+	}
+}

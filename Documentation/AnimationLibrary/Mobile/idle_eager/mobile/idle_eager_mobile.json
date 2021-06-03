@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d04a7dc3e303c46153f4ee9e0e439bc003676cb67203eb89450c909e026c57b6
-size 148
+{"frames": [1.0, 29.0, 60.0, 105.0, 109.0, 148.0], "expressions": ["cheerful", "idle", "win", "idle-blink", "idle", "cheerful"], "frame_rate": 30.0}
