@@ -96,7 +96,10 @@ namespace Bitmoji.GLTFUtility {
 								submeshTris.Add(asyncMesh.tris.Reverse().Select(x => x + vertCount).ToList());
 
 								verts.AddRange(asyncMesh.verts.Select(x => new Vector3(-x.x, x.y, x.z)));
-								normals.AddRange(asyncMesh.norms.Select(v => { v.x = -v.x; return v; }));
+
+								if (asyncMesh.norms != null) {
+									normals.AddRange(asyncMesh.norms.Select(v => { v.x = -v.x; return v; }));
+								}
 								//tangents.AddRange(asyncMesh.tangents.Select(v => { v.y = -v.y; v.z = -v.z; return v; }));
 
 								// Weights
@@ -131,7 +134,7 @@ namespace Bitmoji.GLTFUtility {
 
 								// Verts - (X points left in GLTF)
 								if (primitive.attributes.POSITION.HasValue) {
-									IEnumerable<Vector3> newVerts = accessors[primitive.attributes.POSITION.Value].ReadVec3().Select(v => { v.x = -v.x; return v; });
+									IEnumerable<Vector3> newVerts = accessors[primitive.attributes.POSITION.Value].ReadVec3(true).Select(v => { v.x = -v.x; return v; });
 									verts.AddRange(newVerts);
 								}
 
@@ -145,12 +148,12 @@ namespace Bitmoji.GLTFUtility {
 
 								/// Normals - (X points left in GLTF)
 								if (primitive.attributes.NORMAL.HasValue) {
-									normals.AddRange(accessors[primitive.attributes.NORMAL.Value].ReadVec3().Select(v => { v.x = -v.x; return v; }));
+									normals.AddRange(accessors[primitive.attributes.NORMAL.Value].ReadVec3(true).Select(v => { v.x = -v.x; return v; }));
 								}
 
 								// Tangents - (X points left in GLTF)
 								if (primitive.attributes.TANGENT.HasValue) {
-									tangents.AddRange(accessors[primitive.attributes.TANGENT.Value].ReadVec4().Select(v => { v.y = -v.y; v.z = -v.z; return v; }));
+									tangents.AddRange(accessors[primitive.attributes.TANGENT.Value].ReadVec4(true).Select(v => { v.y = -v.y; v.z = -v.z; return v; }));
 								}
 
 								// Vertex colors
@@ -160,7 +163,7 @@ namespace Bitmoji.GLTFUtility {
 
 								// Weights
 								if (primitive.attributes.WEIGHTS_0.HasValue && primitive.attributes.JOINTS_0.HasValue) {
-									Vector4[] weights0 = accessors[primitive.attributes.WEIGHTS_0.Value].ReadVec4();
+									Vector4[] weights0 = accessors[primitive.attributes.WEIGHTS_0.Value].ReadVec4(true);
 									Vector4[] joints0 = accessors[primitive.attributes.JOINTS_0.Value].ReadVec4();
 									if (joints0.Length == weights0.Length) {
 										BoneWeight[] boneWeights = new BoneWeight[weights0.Length];
@@ -227,7 +230,7 @@ namespace Bitmoji.GLTFUtility {
 							Debug.LogWarning("Accessor is null");
 							return new Vector3[vertCount];
 						}
-						Vector3[] accessorData = accessors[accessor.Value].ReadVec3().Select(v => { v.x = -v.x; return v; }).ToArray();
+						Vector3[] accessorData = accessors[accessor.Value].ReadVec3(true).Select(v => { v.x = -v.x; return v; }).ToArray();
 						if (accessorData.Length != vertCount) {
 							Vector3[] resized = new Vector3[vertCount];
 							Array.Copy(accessorData, 0, resized, vertStartIndex, accessorData.Length);
@@ -313,7 +316,7 @@ namespace Bitmoji.GLTFUtility {
 						if (uvs != null) uvs.AddRange(new Vector2[vertCount - uvs.Count]);
 						return;
 					}
-					Vector2[] _uvs = accessors[texcoord.Value].ReadVec2();
+					Vector2[] _uvs = accessors[texcoord.Value].ReadVec2(true);
 					FlipY(ref _uvs);
 					if (uvs == null) uvs = new List<Vector2>(_uvs);
 					else uvs.AddRange(_uvs);

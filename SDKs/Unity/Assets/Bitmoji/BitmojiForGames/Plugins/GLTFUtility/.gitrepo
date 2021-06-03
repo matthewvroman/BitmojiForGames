@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/Bitmoji/GLTFUtility
 	branch = master
-	commit = 286fab58943803f33dd9320ff4e9ea181219d134
+	commit = 99f2715c55fc17c30455dfa2864762817d9a52c2
 	parent = 7737df5d634a8542ba76804f012444c074d213fc
 	method = merge
 	cmdver = 0.4.3
