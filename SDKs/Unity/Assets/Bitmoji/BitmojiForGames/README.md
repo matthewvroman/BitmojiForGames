@@ -7,7 +7,17 @@ NOTE: This plug-in depends on the [Snap Kit plug-in for Unity](https://assetstor
 
 If you decide you want to have users' personalized avatars, you need authentication and permission from the Bitmoji group. To obtain permission, please send your non-confidential Snap Kit client ID to games@bitmoji.com. See [here](https://github.com/Bitmoji/BitmojiForGames/tree/master/Documentation/DeveloperGuide#step-3---access-bitmoji-avatars) for more information.
 
-NOTE: There is a known bug affecting some users where avatar downloads from the API fail due to improper credentials. We are looking into it and will update the SDK as needed.
+The Bitmoji for Games Plugin uses a customized fork of [GLTFUtility](https://github.com/Siccity/GLTFUtility). As such, when creating a new project you __must__ make sure that the 4 shaders from GLTFUtility are included in your build, otherwise you will not be able to load most assets. Here is the documentation on how to do so:
+
+To ensure that Unity includes the GLTFUtility shaders in builds, you must add these shaders to the 'Always Included Shaders' list.
+
+1. Open Edit -> Project Settings
+2. Open Graphics
+3. Scroll to Always Included Shaders
+4. Under Size, increase the value by 4 and hit Enter.
+5. In the Project panel, navigate to Assets/Bitmoji/BitmojiForGames/Plugins/GLTFUtility/Materials/Built-in.
+6. In this directory are 4 .shader files.
+7. Drag and drop each of the 4 files into one of the 4 newly created rows in Always Included Shaders.
 
 Assets
 ------
