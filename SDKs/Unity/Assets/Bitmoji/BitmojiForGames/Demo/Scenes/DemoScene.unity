@@ -593,6 +593,7 @@ MonoBehaviour:
   DebugText: {fileID: 1177446093}
   StickerObject: {fileID: 715644476}
   LevelOfDetail: 0
+  IsAsync: 1
 --- !u!4 &903682257
 Transform:
   m_ObjectHideFlags: 0
