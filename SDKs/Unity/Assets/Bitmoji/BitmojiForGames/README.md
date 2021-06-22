@@ -19,6 +19,8 @@ To ensure that Unity includes the GLTFUtility shaders in builds, you must add th
 6. In this directory are 4 .shader files.
 7. Drag and drop each of the 4 files into one of the 4 newly created rows in Always Included Shaders.
 
+Many functions have an async variant as well. You can call them with `Async` added to the function name and an additional parameter `Action<GameObject> onFinish` for the callback.
+
 Assets
 ------
 ### <a id="level-of-detail">__Level of Detail__</a>
@@ -240,5 +242,5 @@ The `FacialExpressionTextures` component is a special component that will be att
 The `AvatarAttributes` component is a special component that will be attached to the root node of a loaded avatar. Its purpose is to hold information about the avatar that may be useful in certain applications.
 
 Attributes:
-- `Assets.CharacterGender Gender` - The gender of the avatar. Currently valid values are `Male` and `Female`.
+- `Assets.CharacterGender Gender` - The gender of the avatar. Currently valid values are `male` and `female`.
 - `string AnimationBodyType` - The body type of the avatar to use for animations. Currently valid values are `default` and `heavy`.
