@@ -13,6 +13,7 @@ public class BitmojiLoader : MonoBehaviour
     public SnapKitHandler Snapkit;
     public Text DebugText;
     public GameObject StickerObject;
+    public GameObject LoginButton;
     public Assets.LevelOfDetail LevelOfDetail = Assets.LevelOfDetail.LOD3;
     public bool IsAsync = true;
 
@@ -40,11 +41,11 @@ public class BitmojiLoader : MonoBehaviour
                 ReplaceBitmoji(importedBitmoji, false);
             };
 
-            if (IsAsync) 
+            if (IsAsync)
             {
                 Assets.AddDefaultAvatarToSceneAsync(LevelOfDetail, (npcBitmoji) => afterImport(npcBitmoji));
             }
-            else 
+            else
             {
                 GameObject npcBitmoji = await Assets.AddDefaultAvatarToScene(LevelOfDetail, null);
                 afterImport(npcBitmoji);
@@ -178,6 +179,7 @@ public class BitmojiLoader : MonoBehaviour
         Action<GameObject> afterImport = (importedBitmoji) => {
             DebugText.text = "3D Bitmoji downloaded successfully.";
             ReplaceBitmoji(importedBitmoji, true, Snapkit.AvatarId);
+            LoginButton.SetActive(false);
         };
 
         if (IsAsync)
