@@ -175,7 +175,7 @@ Use the Skirt proxy to get an idea of how poses will look in skirts (the bottom 
 
 1. Bring `.fbx` and `.json` into your Unity Project.
 
-1. Make sure **FacialAnimConverter.cs** is loaded in Unity, then use **Bitmoji For Games: Facial Animation Converter** to add face animation data. (Go to **Add Facial Animation** section of [Avatar Setup in Unity](https://github.com/Bitmoji/Bitmoji-3D/) doc for more details)
+1. Make sure **FacialAnimConverter.cs** is loaded in Unity, then use **Bitmoji For Games: Facial Animation Converter** to add face animation data. (Go to **Add Facial Animation** section of [Avatar Setup in Unity](https://github.com/Bitmoji/BitmojiForGames/tree/master/Documentation/AnimationToolset/Avatar%20Setup%20in%20Unity) doc for more details)
 
 1. Connect the animation to your Animator Controller, then apply it to the Animator that is added to the `AVATAR` node of the loaded glb.
 
