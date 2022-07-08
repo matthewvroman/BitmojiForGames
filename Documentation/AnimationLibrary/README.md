@@ -18,13 +18,13 @@ Snap may update these file formats, names, animations, etc. which may cause comp
 
 ***animation previews are of the high-res avatar, but low-res avatar files are also available for use***
 
-1.  Browse the list of animations below and click "[console](https://github.com/Bitmoji/Bitmoji-3D/tree/master/BitmojiForGames/AnimationLibrary/Console/)" for high-res files, or click "[mobile](https://github.com/Bitmoji/Bitmoji-3D/tree/master/BitmojiForGames/AnimationLibrary/Mobile/)” for low-res files
+1.  Browse the list of animations below and click "[console](https://github.com/Bitmoji/BitmojiForGames/blob/master/Documentation/AnimationLibrary/Console/)" for high-res files, or click "[mobile](https://github.com/Bitmoji/BitmojiForGames/blob/master/Documentation/AnimationLibrary/Mobile/)” for low-res files
 
 1.  If satisfied with the animation download the baked animation files and use as-is.
 
 1.  If you want to modify an animation download the .ma of desired animation and make adjustments as needed.
 
-1.  Refer to the [Animation Toolset](https://github.com/Bitmoji/Bitmoji-3D/blob/master/BitmojiForGames/AnimationToolset/README.md) doc for information on how to bake animations from Maya and bring baked files into game engines.
+1.  Refer to the [Animation Toolset](https://github.com/Bitmoji/BitmojiForGames/blob/master/Documentation/AnimationToolset/README.md) doc for information on how to bake animations from Maya and bring baked files into game engines.
 
 ## IDLES
 
