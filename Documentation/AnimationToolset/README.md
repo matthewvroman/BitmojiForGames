@@ -143,7 +143,8 @@ Use the Skirt proxy to get an idea of how poses will look in skirts (the bottom 
 
 **scripts for Maya**
 
-- snap_bake.py 
+- python 2/snap_bake.py 
+- python 3/snap_bake.py
 
 **scripts for Unity**
 
@@ -171,7 +172,9 @@ Use the Skirt proxy to get an idea of how poses will look in skirts (the bottom 
 
 1. Create animation for body and face
 
-1. In Maya run the **snap_bake.py** script to bake the animation and export an `.fbx` with body animation and a `.json` with face animation data. After the baking process some group nodes will be deleted but the joint hierarchy will stay the same.
+1. In Maya run the **snap_bake.py** script to bake the animation and export an `.fbx` with body animation and a `.json` with face animation data. After the baking process some group nodes will be deleted but the joint hierarchy will stay the same. 
+    1. Maya 2022 and later use Python 3 by default
+    1. Earlier versions of Maya use Python 2
 
 1. Bring `.fbx` and `.json` into your Unity Project.
 
